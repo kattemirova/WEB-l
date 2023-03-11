@@ -20,3 +20,27 @@ footer {
     font-size: 12pt; 
     text-align: right;
 }
+
+a {
+    color: orange; 
+    text-decoration: none;
+    color: orange; 
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+    background-color: aquamarine;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    background-color: white;
+    font-weight: bold;
+}
+
+a:active {
+    color: pink;
+    background-color: green;
+}
