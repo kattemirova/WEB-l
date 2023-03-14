@@ -26,6 +26,7 @@ a {
     text-decoration: none;
     color: orange; 
     text-decoration: none;
+    transition: 600ms 5s;
 }
 
 a:visited {
@@ -38,6 +39,10 @@ a:hover {
     text-decoration: underline;
     background-color: white;
     font-weight: bold;
+    transition: 600ms 0.3s;
+    text-shadow: -5px 5px 1px black;
+    opacity: 1;
+    transition: 600ms 1s;
 }
 
 a:active {
