@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-image: linear-gradient(to right bottom, red, orange, yellow, green, lightblue, blue, purple); 
+    background-image: linear-gradient(red, orange, yellow, green, lightblue, blue, purple); 
     color: black; 
     padding: 0px; 
     font-size: 12pt;
@@ -24,8 +24,8 @@ header:hover {
 }
 
 footer {
-    background-color: black;
-    color: lightskyblue; 
+    background-image: linear-gradient(red, orange, yellow, green, lightblue, blue, purple);;
+    color: black; 
     padding: 0px; 
     font-size: 12pt; 
     text-align: right;
