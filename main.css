@@ -26,10 +26,14 @@ header:hover {
 footer {
     background-image: linear-gradient(red, orange, yellow, green, lightblue, blue, purple);;
     color: black; 
-    padding: 0px; 
+    padding: 0; 
     font-size: 12pt; 
     text-align: right;
     transition: 600ms 3s;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 footer:hover {
