@@ -13,6 +13,10 @@
             let result = a + b;
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
+        function showAuthor() {
+            let author = 'Авторы страницы:\nТемирова Екатерина и Пахомова Валерия\nДобро пожаловать на наш сайт!'
+            alert(author)
+        }
     </script>
     <style>
         .message {
@@ -32,16 +36,16 @@
 
 
 <body>
-    <header>
-        НГТУ, ФБ, Лабораторная работа 4
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 5
     </header>
 
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто авторы страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто авторы страницы</div>
     </main>
 
-    <footer>
+    <footer onclick="showAuthor()">
         &copy; Темирова-Пахомова, ФБИ-11, 2 курс, 2023
     </footer>
 
