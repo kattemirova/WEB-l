@@ -42,8 +42,16 @@
             alert('Деление ' + a + ' на ' + b + ' равно ' + result);
         }
         function showAuthor() {
-            let author = 'Авторы страницы:\nТемирова Екатерина и Пахомова Валерия\nДобро пожаловать на наш сайт!'
-            alert(author)
+            let author = 'Авторы страницы:\nТемирова Екатерина и Пахомова Валерия\nДобро пожаловать на наш сайт!';
+            alert(author);
+        }
+        function changeOutput(buttnNum, backColor, textColor, bord, textCenter) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttnNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = bord;
+            output.style.textAlign = textCenter;
         }
     </script>
     <style>
@@ -58,7 +66,11 @@
             cursor: pointer;
             text-align: center;
         }
-
+        #output{
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 
@@ -80,6 +92,15 @@
         <div class="message" onclick="showDel()">Найти деление</div>
 
         <div class="message" onclick="showAuthor()">Узнать, кто авторы страницы</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'black', 'blue', '6px dashed', 'center')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', '6px dashed', 'center')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'black', 'red', '6px dashed', 'center')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'black', 'yellow', '6px dashed', 'center')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer onclick="showAuthor()">
