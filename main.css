@@ -23,6 +23,10 @@ header:hover {
     text-align: center;
 }
 
+main {
+    margin: 10px 20px;
+}
+
 footer {
     background-image: linear-gradient(red, orange, yellow, green, lightblue, blue, purple);;
     color: black; 
