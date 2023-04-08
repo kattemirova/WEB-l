@@ -53,6 +53,19 @@
             output.style.border = bord;
             output.style.textAlign = textCenter;
         }
+        function korsSum() {
+            let inputI = document.getElementById('numberI');
+            let inputJ = document.getElementById('numberJ');
+            let inputK = document.getElementById('numberK');
+            let inputL = document.getElementById('numberL');
+
+            let i = parseInt(inputI.value);
+            let j = parseInt(inputJ.value);
+            let k = parseInt(inputK.value);
+            let l = parseInt(inputL.value);
+            let result = i + j + k + l;
+            alert('Общая цена: ' + result + ' р');
+        }
     </script>
     <style>
         .message {
@@ -94,13 +107,35 @@
         <div class="message" onclick="showAuthor()">Узнать, кто авторы страницы</div>
 
         <div>
-            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'black', 'blue', '6px dashed', 'center')">
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'black', 'aqua', '6px dashed', 'center')">
             <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', '6px dashed', 'center')">
-            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'black', 'red', '6px dashed', 'center')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'black', 'fuchsia', '6px dashed', 'center')">
             <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'black', 'yellow', '6px dashed', 'center')">
         </div>
 
         <div id="output"></div>
+
+        <div>
+            Яблоки (100р/шт):
+        </div>
+        <label><input type="number" value="3" id="numberI"></label><br>
+        <div>
+            Груши (80р/шт):
+        </div>
+        <label><input type="number" value="8" id="numberJ"></label><br>
+        <div>
+            Апельсины (150р/шт):
+        </div>
+        <label><input type="number" value="4" id="numberK"></label><br>
+        <div>
+            Дыни (300р/шт):
+        </div>
+        <label><input type="number" value="1" id="numberL"></label><br>
+        <div>
+            <input type="button" value="Рассчитать" onclick="changeOutput()">
+        </div>
+        <label>Первое число: <input type="number" id="result"></label>
+
     </main>
 
     <footer onclick="showAuthor()">
