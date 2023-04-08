@@ -63,8 +63,8 @@
             let j = parseInt(inputJ.value);
             let k = parseInt(inputK.value);
             let l = parseInt(inputL.value);
-            let result = i + j + k + l;
-            alert('Общая цена: ' + result + ' р');
+            let result = 100*i + 80*j + 150*k + 300*l;
+            ob.innerHTML = 'Общая цена: ' + result + ' p';
         }
     </script>
     <style>
@@ -72,18 +72,45 @@
             border: 1px solid;
             width: 220px;
             height: 30px;
-            background-color: gray;
             color: brown;
-            border-color: blueviolet;
             display: inline-block;
             cursor: pointer;
             text-align: center;
+            margin-top: 7px;
         }
+
         #output{
-            border: 1px solid;
+           
             width: 300px;
             height: 40px;
+            padding: 3px;
+            margin-top: 7px;
         }
+        .korz {    
+            width: 300px;
+            height: auto;
+            color: brown;
+            border: 3px solid;
+            border-color: brown;
+            margin-top: 60px;
+            padding: 2px;
+        }
+
+        #ob {
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: palevioletred;
+            margin-top: 7px;
+            padding: 3px;
+        }
+
+        .numb {
+            margin-top: 4px;
+            padding: 3px;
+        }
+
     </style>
 </head>
 
@@ -94,8 +121,8 @@
     </header>
 
     <main>
-        <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
-        <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+        <label>Первое число: <input class="numb" type="number" value="5154" id="numberA"></label><br>
+        <label>Второе число: <input class="numb" type="number" value="7891" id="numberB"></label><br>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
 
         <div class="message" onclick="showRas()">Найти разность чисел</div>
@@ -107,35 +134,23 @@
         <div class="message" onclick="showAuthor()">Узнать, кто авторы страницы</div>
 
         <div>
-            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'black', 'aqua', '6px dashed', 'center')">
-            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', '6px dashed', 'center')">
-            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'black', 'fuchsia', '6px dashed', 'center')">
-            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'black', 'yellow', '6px dashed', 'center')">
+            <input class="button" type="button" value="Кнопка 1" onclick="changeOutput(1, 'black', 'aqua', '6px dashed', 'center')">
+            <input class="button" type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', '6px dashed', 'center')">
+            <input class="button" type="button" value="Кнопка 3" onclick="changeOutput(3, 'black', 'fuchsia', '6px dashed', 'center')">
+            <input class="button" type="button" value="Кнопка 4" onclick="changeOutput(4, 'black', 'yellow', '6px dashed', 'center')">
         </div>
 
         <div id="output"></div>
 
-        <div>
-            Яблоки (100р/шт):
+        <div class="korz">
+            <h2>Корзина товаров</h2>
+            <label>Яблоки (100р/шт):<br><input class="numb" type="number" value="3" id="numberI"></label><br>
+            <label>Груши (80р/шт):<br><input class="numb" type="number" value="8" id="numberJ"></label><br>
+            <label>Апельсины (150р/шт):<br><input class="numb" type="number" value="4" id="numberK"></label><br>
+            <label>Дыни (300р/шт):<br><input class="numb" type="number" value="1" id="numberL"></label><br>
+            <input class="button" type="button" value="Рассчитать" onclick="korsSum()">
+            <div id="ob"></div>
         </div>
-        <label><input type="number" value="3" id="numberI"></label><br>
-        <div>
-            Груши (80р/шт):
-        </div>
-        <label><input type="number" value="8" id="numberJ"></label><br>
-        <div>
-            Апельсины (150р/шт):
-        </div>
-        <label><input type="number" value="4" id="numberK"></label><br>
-        <div>
-            Дыни (300р/шт):
-        </div>
-        <label><input type="number" value="1" id="numberL"></label><br>
-        <div>
-            <input type="button" value="Рассчитать" onclick="changeOutput()">
-        </div>
-        <label>Первое число: <input type="number" id="result"></label>
-
     </main>
 
     <footer onclick="showAuthor()">
