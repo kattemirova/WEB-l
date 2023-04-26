@@ -70,6 +70,33 @@
             screens[0].style.display = 'block';
             screens[1].style.display = 'none';
         }
+
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'steelblue') {
+                div.style.color = 'black';
+                div.style.backgroundColor = 'aquamarine';
+                document.getElementById('color-name').innerHTML = 'бирюзовый';
+            }
+            else if (div.style.backgroundColor == 'aquamarine') {
+                div.style.color = 'white';
+                div.style.backgroundColor = 'mediumslateblue';
+                document.getElementById('color-name').innerHTML = 'фиолетовый';
+            }
+            else if (div.style.backgroundColor == 'mediumslateblue') {
+                div.style.color = 'black';
+                div.style.backgroundColor = 'violet';
+                document.getElementById('color-name').innerHTML = 'розовый';
+            }
+            else if (div.style.backgroundColor == 'violet') {
+                div.style.color = 'white';
+                div.style.backgroundColor = 'maroon';
+                document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else {
+                div.style.backgroundColor = 'steelblue';
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+        }
     </script>
 
     <style>
@@ -100,6 +127,17 @@
             text-align: left;
             background-color: SteelBlue;
             color: white;
+        }
+
+        .color {
+            border: 7px solid;
+            border-radius: 10px;
+            color: white;
+            width: 300px;
+            margin: 30px auto;
+            padding: 30px;
+            text-align: center;
+            background-color: SteelBlue;
         }
     </style>
 </head>
@@ -148,6 +186,10 @@
                     <li>После того, как число угадано, вы сможете сыграть заново, нажав на кнопку "Сыграть еще раз"</li>
                 </ol>
             </div>
+        </div>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id = color-name>Синий</span><br>
+            Сделайте двойной щелчок, чтобы сменить цвет
         </div>
     </main>
     <footer>
