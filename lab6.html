@@ -9,6 +9,7 @@
     <script>
         let number;
         let count = 0;
+        let n = 0;
         function startGame() {
             number = Math.floor( Math.random() * 100) + 1;
             let screens = document.getElementsByClassName('game');
@@ -50,7 +51,7 @@
             let screens = document.getElementsByClassName('game');
             let input = document.getElementById('user-number');
             let userNumber = parseInt(input.value);
-            input.value = 0;
+            input.value = 'none';
             let message = document.getElementById('result');
             message.innerHTML = '';
             screens[1].style.display = 'block';
@@ -97,6 +98,16 @@
                 document.getElementById('color-name').innerHTML = 'синий';
             }
         }
+
+        function moving(div) {
+            n++;
+            if (n % 2 == 0) {
+                div.style.transform = 'translate(1100px,0) rotate(0)';  
+            }        
+            else {
+                div.style.transform = 'translate(0,0) rotate(4turn)';  
+            }
+        }
     </script>
 
     <style>
@@ -125,12 +136,31 @@
         .color {
             border: 7px solid;
             border-radius: 10px;
-            color: white;
             width: 300px;
             margin: 30px auto;
             padding: 30px;
             text-align: center;
+            color: white;
             background-color: SteelBlue;
+        }
+
+        .blok {
+            margin: 30px;
+            position: absolute;
+            left: 45px;
+            cursor: pointer;
+            border: 7px solid;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            padding: 30px;
+            text-align: center;
+            line-height: 150px;
+            color: white;
+            background-color: SteelBlue;
+            transition-duration: 5s;
+            transition-delay: 500ms;
+            transform: rotate(0);
         }
     </style>
 </head>
@@ -165,9 +195,11 @@
                 <button onclick="again()">Сыграть еще раз</button>
             </div>
         </div>
+
         <div class="rules">
             <button onclick="rules()">Показать правила игры</button>
         </div>
+
         <div class="rules" style="display: none;">
             <button onclick="hide()">Скрыть правила игры</button>
                 <ol type="I">
@@ -178,10 +210,18 @@
                     <li>После того, как число угадано, вы сможете сыграть заново, нажав на кнопку "Сыграть еще раз"</li>
                 </ol>
         </div>
+
         <div class="color" ondblclick="changeColor(this)">
-            Цвет: <span id = color-name>Синий</span><br>
+            Цвет: <span id = color-name>cиний</span><br>
             Сделайте двойной щелчок, чтобы сменить цвет
         </div>
+
+        <div class="blok" onclick="moving(this)">
+            Щелкни меня! 
+        </div>
+
+      
+
     </main>
     <footer>
         &copy; Темирова-Пахомова, ФБИ-11, 2 курс, 2023
