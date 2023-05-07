@@ -9,7 +9,7 @@
     <script>
         function addBlocks() {
             let blocks = document.getElementById('blocks');
-            for (let i = 0; i < 10; i ++) {
+            for (let i = 0; i < 10; i++) {
                 let block = document.createElement('div');
                 block.innerHTML = 'Блок №' + (i+1) + ': ' + (2 * i**2);
                 blocks.appendChild(block);
@@ -35,9 +35,46 @@
             let average = sum / exchange.length;
             document.getElementById('detail').innerHTML = 'Среднее значение: ' + average;
         }
+
+        function addTransparentBlocks() {
+            let blocks2 = document.getElementById('transparent-blocks');
+            for (let i = 0; i < 10; i++) {
+                let block2 = document.createElement('div');
+                block2.innerHTML = 'Блок №' + (i+1);
+                block2.style.opacity = i / 10;
+                blocks2.appendChild(block2);
+            }
+        }
+
+        function createCirсles() {
+            let circles = document.getElementById('circles');
+            let countInput = document.getElementById('number');
+            let count = parseInt(countInput.value);
+            for (let i = 1; i <= count; i++) {
+                let krugi = document.createElement('div');
+                krugi.style.border = '2px solid';
+                krugi.style.borderRadius = '50px/50px';
+                krugi.style.display = 'inline-block';
+                krugi.style.textAlign = 'center';
+                krugi.style.width = '50px';
+                krugi.style.height = '50px';
+                krugi.style.lineHeight = '50px';
+                krugi.style.margin = '20px';
+                if (i % 2 == 0) {
+                    krugi.style.background = 'white';
+                    krugi.style.color = 'black';
+                }
+                else {
+                    krugi.style.background = 'black';
+                    krugi.style.color = 'white';
+                }
+                krugi.innerHTML = count - i +1;
+                circles.appendChild(krugi);
+            }
+        }
     </script>
     <style>
-
+       
     </style>
 </head>
 <body>
@@ -49,8 +86,17 @@
         <div id="blocks"></div>
 
         <button onclick="showExchange()">Курс доллара</button>
-        <table border="'1" id="dollar-exchange"></table>
+        <table border="1" id="dollar-exchange"></table>
         <div id="detail"></div>
+
+        <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button>
+        <div id="transparent-blocks"></div>
+
+        <div>
+            <label>Введите число:<br><input type="number" value="5" placeholder="Введите число кругов" id="number"></label>
+            <button onclick="createCirсles()">Черное/белое</button>
+            <div id="circles"></div>
+           </div>
     </main>
     <footer>
         &copy; Темирова-Пахомова, ФБИ-11, 2 курс, 2023
