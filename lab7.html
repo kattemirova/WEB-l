@@ -72,6 +72,27 @@
                 circles.appendChild(krugi);
             }
         }
+
+        function addTableMultiplications() {
+            let multiplications = document.getElementById('multiplications-table');
+            for (let i = 13; i <=33; i++) {
+                let tablee = document.createElement('div');
+                let result = i * 60;
+                tablee.innerHTML = i + ' * ' + '60' + ' = ' + result;
+                multiplications.appendChild(tablee);
+            }
+        }
+
+        function addTableMultiplications2() {
+            let multiplications2 = document.getElementById('multiplications-table2');
+            for (let i = 13; i <=33; i++) {
+                let tableee = document.createElement('div');
+                let rresult = i * 28;
+                tableee.innerHTML = i + ' * ' + '28' + ' = ' + rresult;
+                multiplications2.appendChild(tableee);
+
+            }
+        }
     </script>
     <style>
        
@@ -92,11 +113,16 @@
         <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button>
         <div id="transparent-blocks"></div>
 
-        <div>
-            <label>Введите число:<br><input type="number" value="5" placeholder="Введите число кругов" id="number"></label>
-            <button onclick="createCirсles()">Черное/белое</button>
-            <div id="circles"></div>
-           </div>
+    
+        <label>Введите число:<br><input type="number" value="5" placeholder="Введите число кругов" id="number"></label>
+        <button onclick="createCirсles()">Черное/белое</button>
+        <div id="circles"></div>
+    
+        <button onclick="addTableMultiplications()">Таблица умножения на 60</button>
+        <div id="multiplications-table"></div>
+        <button onclick="addTableMultiplications2()">Таблица умножения на 28</button>
+        <div id="multiplications-table2"></div>
+
     </main>
     <footer>
         &copy; Темирова-Пахомова, ФБИ-11, 2 курс, 2023
