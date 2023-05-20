@@ -11,3 +11,20 @@ function showDate() {
     out4.innerHTML = 'Дата и время для США ' + today.toLocaleString('en-US');
     out5.innerHTML = 'Дата и время для Испании ' + today.toLocaleString('es');
 }
+
+function showDaysCount() {
+    let today = new Date();
+    let inputDate = document.querySelector('input[type=date]');
+    let birthday = new Date(inputDate.value);
+    let daysCount = (today - birthday)/1000/60/60/24;
+    daysCount = Math.floor(daysCount);
+    let days = document.getElementById('day')
+    days.innerHTML = 'Количество дней с даты рождения ' + daysCount;
+}
+
+function clearDaysCount() {
+    let inputDate = document.querySelector('input[type=date]');
+    inputDate.value = '';
+    let days = document.getElementById('day');
+    days.innerHTML = ' ';
+}
